@@ -1,0 +1,32 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: myaliyun:8848
+
+
+  # 指定 Dubbo 服务实现类的扫描基准包
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    base-packages: com.example.demo.service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+
+
+
+
+
+
+
+
+
